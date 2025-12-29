@@ -12,21 +12,21 @@ import { JoiValidationSchema } from './config/joi.validation';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      load: [ EnvConfiguration ],
+      load: [EnvConfiguration],
       validationSchema: JoiValidationSchema,
     }),
 
     //Configuracion para servir aplicaciones frontend
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname,'..','public'),
+      rootPath: join(__dirname, '..', 'public'),
     }),
     //Conexion de MongoDB
     MongooseModule.forRoot(process.env.MONGODB || '', {
-      dbName: 'nest-pokedex'
+      dbName: 'nest-pokedex',
     }),
     PokemonModule,
     CommonModule,
-    SeedModule
+    SeedModule,
   ],
 })
 export class AppModule {}

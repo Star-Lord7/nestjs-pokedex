@@ -14,11 +14,11 @@ import { ConfigModule } from '@nestjs/config';
       {
         name: Pokemon.name, //nombre de la tabla
         schema: PokemonSchema, //Schema de la entidad
-      }
-    ])
+      },
+    ]),
   ],
   exports: [
-    MongooseModule //Exportamos el modulo que tiene las configuraciones
-  ]
+    MongooseModule, //Exportamos el modulo que tiene las configuraciones
+  ],
 })
 export class PokemonModule {}
